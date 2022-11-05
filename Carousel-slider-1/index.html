@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slider-item">
+            <h1>1</h1>
+        </div>
+        <div class="slider-item">
+            <h1>2</h1>
+        </div>
+        <div class="slider-item">
+            <h1>3</h1>
+        </div>
+        <div class="slider-item">
+            <h1>4</h1>
+        </div>
+        <div class="slider-item">
+            <h1>5</h1>
+        </div>
+        <div class="slider-item">
+            <h1>6</h1>
+        </div>
+    </div>
+    <script>
+        const showingClass = 'showing';
+        const firstSlide = document.querySelector('.slider-item:first-child')
+
+        function slide() {
+            const currentSlide = document.querySelector(`.${showingClass}`)
+            if (currentSlide) { // 토글로 하면 되지 않을까??
+                currentSlide.classList.remove(showingClass);
+                const nextSlide = currentSlide.nextElementSibling;
+                if (nextSlide) {
+                    nextSlide.classList.add(showingClass);
+                } else {
+                    firstSlide.classList.add(showingClass);
+                }
+            } else {
+                firstSlide.classList.add(showingClass);
+            }
+        }
+        slide();
+        setInterval(slide, 2000);
+    </script>
+</body>
+
+</html>

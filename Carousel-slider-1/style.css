@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+}
+
+.slider {
+  width: 100%;
+  position: relative;
+}
+
+.slider-item {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: seagreen;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.slider-item:nth-child(odd) {
+  background-color: lavender;
+}
+
+.slider-item:nth-child(even) {
+  background-color: skyblue;
+}
+
+.showing {
+  z-index: 1;
+  opacity: 1;
+}
